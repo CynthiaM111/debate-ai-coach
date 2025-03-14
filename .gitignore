@@ -1,0 +1,20 @@
+# Ignore environment files
+backend/.env
+venv/
+__pycache__/
+
+# Ignore dependencies
+backend/__pycache__/
+backend/venv/
+frontend/node_modules/
+frontend/debate-ui/node_modules/
+# Ignore build artifacts
+frontend/build/
+
+backend/*.pyc
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+venv/
+**/site-packages/
