@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import openai
 import os
+from dotenv import load_dotenv
+
 #initialize FASTAPI app
 app = FastAPI()
 app.add_middleware(
@@ -13,7 +15,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 #OpenAI API key
+load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
+print("OPENAI_API_KEY:", os.getenv("OPENAI_API_KEY"))
 
 #Pydantic model for the request body structure
 class DebateRequest(BaseModel):
